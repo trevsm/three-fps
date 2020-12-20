@@ -1,6 +1,6 @@
-import React, {Suspense} from 'react'
+import React, { Suspense } from 'react'
+
 import { Canvas } from 'react-three-fiber'
-import { PointerLockControls } from '@react-three/drei'
 import { Physics } from 'use-cannon'
 
 import { Lighting } from './lighting/Lighting'
@@ -15,12 +15,10 @@ export default function App() {
       <Stats />
       <Physics gravity={[0, -10, 0]}>
         <Player />
-        <Ground />
+        <Suspense fallback={null}>
+          <Ground />
+        </Suspense>
       </Physics>
-      <PointerLockControls />
-      <Suspense
-        fallback={<div>loading...</div>}
-      ></Suspense>
     </Canvas>
   )
 }

@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://trevsm.github.io/three-fps/",
   "dependencies": {
-    "@react-three/drei": "2.1.1-beta.2",
     "drei": "1.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, Suspense } from 'react'
+import { PointerLockControls } from '@react-three/drei'
 
 import * as THREE from 'three'
 import { useSphere } from 'use-cannon'
@@ -11,7 +12,7 @@ export const Player = props => {
   const PLAYER_HEIGHT = 2.5
   const RUN_SPEED = SPEED * 1.5
   const PAN_SPEED = SPEED * 0.5
-  const JUMP_HEIGHT = 7
+  const JUMP_HEIGHT = PLAYER_HEIGHT*3
   const INERTIA = 5
 
   const [ref, api] = useSphere(() => ({
@@ -97,11 +98,9 @@ export const Player = props => {
   })
 
   return (
-    <group>
-      <mesh ref={ref}>
-        {/* <sphereBufferGeometry attach="geometry" args={PLAYER_HITBOX} />
-      <meshStandardMaterial attach="material"/> */}
-      </mesh>
-    </group>
+    <>
+      <PointerLockControls />
+      <mesh ref={ref}></mesh>
+    </>
   )
 }
