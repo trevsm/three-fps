@@ -2,6 +2,7 @@
   "name": "minecraft-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://trevsm.github.io/three-fps/",
   "dependencies": {
     "@react-three/drei": "2.1.1-beta.2",
     "drei": "1.5.3",
