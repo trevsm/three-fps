@@ -1,12 +1,18 @@
 {
-  "name": "nano-react-app",
+  "name": "minecraft-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "minireset.css": "0.0.6",
+    "@react-three/drei": "2.1.1-beta.2",
+    "drei": "1.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-three-fiber": "5.0.3",
+    "simplex-noise": "2.4.0",
+    "three": "^0.120.1",
+    "use-cannon": "^0.5.0",
+    "zustand": "^3.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,10 +1,21 @@
-import React from 'react';
-import 'minireset.css'
+import React from 'react'
+import { Canvas } from 'react-three-fiber'
+import { PointerLockControls } from '@react-three/drei'
+import { Physics } from 'use-cannon'
 
-function App() {
+import { Lighting } from './lighting/Lighting'
+import { Ground } from './terrain/ground/Ground'
+import { Player } from './player/Player'
+
+export default function App() {
   return (
-    <h1>Nano React App</h1>
-  );
+    <Canvas shadowMap gl={{ alpha: false }} camera={{ fov: 35 }}>
+      <Lighting />
+      <Physics gravity={[0, -10, 0]}>
+        <Player />
+        <Ground />
+      </Physics>
+      <PointerLockControls />
+    </Canvas>
+  )
 }
-
-export default App;
