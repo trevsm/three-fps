@@ -8,16 +8,16 @@ export const Ground = props => {
   const [ref] = usePlane(() => ({
     position: [0, 0, 0],
     rotation: [-Math.PI / 2, 0, 0],
-    args: [1000, 1000],
+    args: [10000, 10000],
   }))
 
   const texture = useLoader(THREE.TextureLoader, grass)
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping
-  texture.repeat.set(64, 64)
+  texture.repeat.set(5000, 5000)
   
   return (
     <mesh ref={ref} receiveShadow>
-      <planeBufferGeometry args={[100, 100]} />
+      <planeBufferGeometry args={[10000, 10000]} />
       <meshStandardMaterial map = { texture } color="green" />
     </mesh>
   )
