@@ -1,6 +1,6 @@
-import * as THREE from 'three'
 import React, { useEffect, useRef } from 'react'
 
+import * as THREE from 'three'
 import { useSphere } from 'use-cannon'
 import { useThree, useFrame } from 'react-three-fiber'
 
@@ -13,8 +13,6 @@ export const Player = props => {
   const PAN_SPEED = SPEED * 0.5
   const JUMP_HEIGHT = 7
   const INERTIA = 5
-
-  const PLAYER_HITBOX = [1, 32, 32]
 
   const [ref, api] = useSphere(() => ({
     mass: 1,
@@ -99,9 +97,11 @@ export const Player = props => {
   })
 
   return (
-    <mesh ref={ref}>
-      <sphereBufferGeometry attach="geometry" args={PLAYER_HITBOX} />
-      <meshStandardMaterial attach="material" color="lightgreen" />
-    </mesh>
+    <group>
+      <mesh ref={ref}>
+        {/* <sphereBufferGeometry attach="geometry" args={PLAYER_HITBOX} />
+      <meshStandardMaterial attach="material"/> */}
+      </mesh>
+    </group>
   )
 }
