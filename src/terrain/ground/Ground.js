@@ -1,8 +1,9 @@
 import * as THREE from 'three'
 import React from 'react'
 
-// import { useLoader } from 'react-three-fiber'
+import { useLoader } from 'react-three-fiber'
 import { usePlane } from 'use-cannon'
+import Grass from './textures/grass.jpg'
 
 // import Height from './heightMaps/height.png'
 // import Normal from './heightMaps/normal.png'
@@ -32,10 +33,16 @@ export default props => {
         map={C}
         color="white"
       /> */
+  // color="#42523d"
+
+  const texture = useLoader(THREE.TextureLoader, Grass)
+  texture.wrapS = texture.wrapT = THREE.RepeatWrapping
+  texture.repeat.set(mapWidth, mapLength)
+
   return (
     <mesh ref={ref}>
-      <planeBufferGeometry attach='geometry' args={[mapWidth, mapLength]}/>
-      <meshStandardMaterial attach='material' color='#42523d'/>
+      <planeBufferGeometry attach="geometry" args={[mapWidth, mapLength]} />
+      <meshStandardMaterial attach="material" map={texture} />
     </mesh>
   )
 }
