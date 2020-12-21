@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, Suspense } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { PointerLockControls } from '@react-three/drei'
 
 import * as THREE from 'three'
@@ -7,18 +7,21 @@ import { useThree, useFrame } from 'react-three-fiber'
 
 import { usePlayerControls } from './PlayerControls'
 
-export const Player = props => {
+export default props => {
   const SPEED = 7
   const PLAYER_HEIGHT = 2.5
   const RUN_SPEED = SPEED * 1.5
-  const PAN_SPEED = SPEED * 0.5
-  const JUMP_HEIGHT = PLAYER_HEIGHT*3
+  const PAN_SPEED = SPEED * 0.6
+  const JUMP_HEIGHT = PLAYER_HEIGHT * 3
   const INERTIA = 5
+
+  //no continuous jumping
+  const jumpCoolDown = useRef()
 
   const [ref, api] = useSphere(() => ({
     mass: 1,
     type: 'Dynamic',
-    position: [0, 10, 0],
+    position: [0, PLAYER_HEIGHT, 0],
     ...props,
   }))
 
@@ -73,7 +76,11 @@ export const Player = props => {
     if (playerOnGround()) {
       api.velocity.set(v[0], v[1], v[2])
 
-      if (jump) api.velocity.set(v[0], JUMP_HEIGHT, v[2])
+      if (!jump) jumpCoolDown.current = false
+      if (jump && !jumpCoolDown.current) {
+        jumpCoolDown.current = true
+        api.velocity.set(v[0], JUMP_HEIGHT, v[2])
+      }
     }
   }
 

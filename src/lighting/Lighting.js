@@ -2,6 +2,7 @@ import React from 'react'
 import { Sky } from '@react-three/drei'
 
 export const Lighting = () => {
+  const d = 8.25
   return (
     <>
       <Sky
@@ -10,20 +11,22 @@ export const Lighting = () => {
         inclination={0}
         azimuth={0.25}
       />
-      <ambientLight intensity={0.4} />
-      <directionalLight
-        castShadow
-        position={[2.5, 8, 5]}
-        intensity={1.5}
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-        shadow-camera-far={50}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
-        shadow-camera-top={10}
-        shadow-camera-bottom={-10}
+      <hemisphereLight
+        skyColor={'black'}
+        groundColor={0xffffff}
+        intensity={0.5}
+        position={[0, 50, 0]}
       />
-      <pointLight position={[0, -10, 0]} intensity={1.5} />
+      <directionalLight
+        position={[-8, 20, 8]}
+        shadow-camera-left={d * -1}
+        shadow-camera-bottom={d * -1}
+        shadow-camera-right={d}
+        shadow-camera-top={d}
+        shadow-camera-near={0.1}
+        shadow-camera-far={1500}
+        castShadow
+      />
     </>
   )
 }

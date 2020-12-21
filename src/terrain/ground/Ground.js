@@ -1,15 +1,21 @@
 import * as THREE from 'three'
 import React from 'react'
-import { useLoader } from 'react-three-fiber'
+
+// import { useLoader } from 'react-three-fiber'
 import { usePlane } from 'use-cannon'
 
-import Height from './height.png'
-import Normal from './normal.png'
-import Color from './color.png'
+// import Height from './heightMaps/height.png'
+// import Normal from './heightMaps/normal.png'
+// import Color from './heightMaps/color.png'
 
-export const Ground = props => {
-  const mapWidth = 100, mapLength = 100
-  const vX = 1024
+export default props => {
+  const mapWidth = 100,
+    mapLength = 100
+  const vX = 16
+
+  // const H = useLoader(THREE.TextureLoader, Height)
+  // const N = useLoader(THREE.TextureLoader, Normal)
+  // const C = useLoader(THREE.TextureLoader, Color)
 
   const [ref] = usePlane(() => ({
     position: [0, 0, 0],
@@ -17,20 +23,19 @@ export const Ground = props => {
     args: [mapWidth, mapLength, vX, vX],
   }))
 
-  const H = useLoader(THREE.TextureLoader, Height)
-  const N = useLoader(THREE.TextureLoader, Normal)
-  const C= useLoader(THREE.TextureLoader, Color)
-
-  return (
-    <mesh ref={ref}>
-      <planeBufferGeometry args={[mapWidth, mapLength, vX, vX]} />
+  // geometry={H}
+  /* <planeBufferGeometry args={[mapWidth, mapLength, vX, vX]} />
       <meshStandardMaterial
         attach="material"
         normalMap={N}
         displacementMap={H}
         map={C}
         color="white"
-      />
+      /> */
+  return (
+    <mesh ref={ref}>
+      <planeBufferGeometry attach='geometry' args={[mapWidth, mapLength]}/>
+      <meshStandardMaterial attach='material' color='#42523d'/>
     </mesh>
   )
 }

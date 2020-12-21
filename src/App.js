@@ -1,12 +1,12 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 
 import { Canvas } from 'react-three-fiber'
 import { Physics } from 'use-cannon'
 
 import { Lighting } from './lighting/Lighting'
-import { Ground } from './terrain/ground/Ground'
-import { Player } from './player/Player'
+import Player from './player/Player'
 import { Stats } from './player/hud/Stats'
+import Terrain from './terrain/Terrain'
 
 export default function App() {
   return (
@@ -15,9 +15,7 @@ export default function App() {
       <Stats />
       <Physics gravity={[0, -10, 0]}>
         <Player />
-        <Suspense fallback={null}>
-          <Ground />
-        </Suspense>
+        <Terrain />
       </Physics>
     </Canvas>
   )
