@@ -5,10 +5,11 @@ import { useSphere } from 'use-cannon'
 
 import { PlayerMovement } from './PlayerMovement'
 import { PlayerCamera } from './PlayerCamera'
+import { PlayerModel } from './PlayerModel'
 
 export default function Player(props) {
   const STATS = {
-    speed: 7,
+    speed: 5,
     player_height: 2.5,
     run_speed: () => STATS.speed * 2,
     pan_speed: () => STATS.speed * 0.6,
@@ -16,10 +17,12 @@ export default function Player(props) {
     inertia: 5,
   }
 
+  // Player hitbox
   const [ref, api] = useSphere(() => ({
     mass: 1,
     type: 'Dynamic',
     position: [0, STATS.player_height, 0],
+    size:[.1, 32, 32],
     ...props,
   }))
 
@@ -29,7 +32,7 @@ export default function Player(props) {
     <group>
       <PlayerCamera ref={ref} STATS={STATS} camera={camera} />
       <PlayerMovement ref={ref} api={api} STATS={STATS} camera={camera} />
-      <mesh ref={ref}></mesh>
+      <PlayerModel ref={ref} />
     </group>
   )
 }

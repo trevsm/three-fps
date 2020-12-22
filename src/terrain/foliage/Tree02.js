@@ -6,29 +6,64 @@ source: https://sketchfab.com/models/b68f79aee62f4e849be265c903f724f5
 title: Spruce Tree - Low Poly
 */
 
-import React, { useRef } from 'react'
+import React, { useRef, Suspense } from 'react'
 import { useGLTF } from '@react-three/drei/useGLTF'
+import { useBox } from 'use-cannon'
 
 export default function Tree02(props) {
-  const group = useRef()
+  const visibleHitBox = useRef(true)
+
+  const [ref ] = useBox(() => ({
+    mass: 0,
+    args: [3, 10, 3],
+    ...props,
+  }))
+
   const { nodes, materials } = useGLTF('/models/trees/tree02/scene.gltf')
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <group rotation={[-1.14, -0.18, 2.73]} scale={[100, 100, 100]}>
-            <group rotation={[Math.PI / 2, 0, 0]} />
+    <mesh ref={ref} {...props} dispose={null}>
+      {visibleHitBox.current ? (
+        <>
+          <boxBufferGeometry
+            attach="geometry"
+            args={[
+              1 / props.scale[0],
+              20 / props.scale[1],
+              1 / props.scale[2],
+            ]}
+          />
+          <meshLambertMaterial color="red" />
+        </>
+      ) : null}
+
+      <Suspense fallback={null}>
+        <group rotation={[-Math.PI / 2, 0, 0]}>
+          <group rotation={[Math.PI / 2, 0, 0]}>
+            <group rotation={[-1.14, -0.18, 2.73]} scale={[100, 100, 100]}>
+              <group rotation={[Math.PI / 2, 0, 0]} />
+            </group>
+            <group rotation={[-3.02, 0.02, -0.82]} scale={[100, 100, 100]}>
+              <group rotation={[Math.PI / 2, 0, 0]} />
+            </group>
+            <group
+              position={[0, -49.71, 0]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={[100, 100, 100]}
+            >
+              <mesh
+                material={materials['tree-spruce']}
+                geometry={nodes['tree_tree-spruce_0'].geometry}
+              />
+            </group>
+            <group
+              position={[748.11, 534.37, 650.76]}
+              rotation={[3.13, 0.76, 2.69]}
+              scale={[100, 100, 100]}
+            />
           </group>
-          <group rotation={[-3.02, 0.02, -0.82]} scale={[100, 100, 100]}>
-            <group rotation={[Math.PI / 2, 0, 0]} />
-          </group>
-          <group position={[0, -49.71, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[100, 100, 100]}>
-            <mesh material={materials['tree-spruce']} geometry={nodes['tree_tree-spruce_0'].geometry} />
-          </group>
-          <group position={[748.11, 534.37, 650.76]} rotation={[3.13, 0.76, 2.69]} scale={[100, 100, 100]} />
         </group>
-      </group>
-    </group>
+      </Suspense>
+    </mesh>
   )
 }
 
