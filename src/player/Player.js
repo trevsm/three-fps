@@ -7,6 +7,8 @@ import { PlayerMovement } from './PlayerMovement'
 import { PlayerCamera } from './PlayerCamera'
 import { PlayerModel } from './PlayerModel'
 
+import {FlashLight} from './tools/FlashLight'
+
 export default function Player(props) {
   const STATS = {
     speed: 5,
@@ -22,7 +24,7 @@ export default function Player(props) {
     mass: 1,
     type: 'Dynamic',
     position: [0, STATS.player_height, 0],
-    size:[.1, 32, 32],
+    size:[1, 32, 32],
     ...props,
   }))
 
@@ -31,8 +33,9 @@ export default function Player(props) {
   return (
     <group>
       <PlayerCamera ref={ref} STATS={STATS} camera={camera} />
+      <FlashLight ref={ref} STATS={STATS} camera={camera}/>
       <PlayerMovement ref={ref} api={api} STATS={STATS} camera={camera} />
-      <PlayerModel ref={ref} />
+      {/* <PlayerModel ref={ref} /> */}
     </group>
   )
 }

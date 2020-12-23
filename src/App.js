@@ -9,9 +9,12 @@ import { Stats } from './player/hud/Stats'
 import Terrain from './terrain/Terrain'
 
 export default function App() {
+  console.warn = () => {} //remove warnings
+
   return (
     <Canvas shadowMap gl={{ alpha: false }} camera={{ fov: 50 }}>
       <Lighting />
+      <fog attach="fog" args={["#0e0e0e", 10, 100]} />
       <Stats />
       <Physics gravity={[0, -10, 0]}>
         <Player />

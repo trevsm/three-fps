@@ -2,7 +2,6 @@
   "name": "minecraft-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://trevsm.github.io/three-fps/",
   "dependencies": {
     "@react-three/cannon": "^0.5.3",
     "@react-three/drei": "^2.2.12",

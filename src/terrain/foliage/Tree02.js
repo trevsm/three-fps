@@ -11,25 +11,25 @@ import { useGLTF } from '@react-three/drei/useGLTF'
 import { useBox } from 'use-cannon'
 
 export default function Tree02(props) {
-  const visibleHitBox = useRef(true)
+  const visibleHitBox = useRef(false)
 
   const [ref ] = useBox(() => ({
     mass: 0,
-    args: [3, 10, 3],
+    args: [2 , 20, 2],
     ...props,
   }))
 
   const { nodes, materials } = useGLTF('/models/trees/tree02/scene.gltf')
   return (
-    <mesh ref={ref} {...props} dispose={null}>
+    <mesh ref={ref} scale={props.scale} dispose={null}>
       {visibleHitBox.current ? (
         <>
           <boxBufferGeometry
             attach="geometry"
             args={[
-              1 / props.scale[0],
+              2 / props.scale[0],
               20 / props.scale[1],
-              1 / props.scale[2],
+              2 / props.scale[2],
             ]}
           />
           <meshLambertMaterial color="red" />
@@ -51,6 +51,7 @@ export default function Tree02(props) {
               scale={[100, 100, 100]}
             >
               <mesh
+              castShadow receiveShadow
                 material={materials['tree-spruce']}
                 geometry={nodes['tree_tree-spruce_0'].geometry}
               />
