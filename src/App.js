@@ -13,7 +13,7 @@ export default function App() {
   const day = useRef(false)
 
   return (
-    <Canvas shadowMap gl={{ alpha: false }} camera={{ fov: 50 }}>
+    <Canvas shadowMap gl={{ alpha: false }} camera={{ fov: 60 }}>
       <Lighting day={day} />
       {day.current ? null : <fog attach="fog" args={['black', 10, 100]} />}
       <Stats />

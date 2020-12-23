@@ -7,12 +7,13 @@ import * as THREE from 'three'
 export const FlashLight = forwardRef((props, ref) => {
   const light = useMemo(() => new THREE.SpotLight('#f6d980'), [])
   const allowToggle = useRef(true)
-  const onOff = useRef(false)
+  const onOff = useRef(true)
 
   const { toggle_light } = props.C
 
-  light.angle = 0.3
-  light.intensity = onOff.current ? 0.8 : 0
+  light.angle = 0.4
+  light.intensity = onOff.current ? 2 : 0
+  light.castShadow = true
 
   function moveLight() {
     const pos = ref.current.position
@@ -48,7 +49,7 @@ export const FlashLight = forwardRef((props, ref) => {
   })
   return (
     <>
-      <primitive object={light} penumbra />
+      <primitive object={light} penumbra/>
       <primitive object={light.target} position={[0, 2, 0]} />
     </>
   )

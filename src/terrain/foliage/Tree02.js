@@ -15,7 +15,7 @@ export default function Tree02(props) {
 
   const [ref ] = useBox(() => ({
     mass: 0,
-    args: [2 , 20, 2],
+    args: [1.5 , 20, 1.5],
     ...props,
   }))
 
@@ -27,12 +27,12 @@ export default function Tree02(props) {
           <boxBufferGeometry
             attach="geometry"
             args={[
-              2 / props.scale[0],
+              1.5 / props.scale[0],
               20 / props.scale[1],
-              2 / props.scale[2],
+              1.5 / props.scale[2],
             ]}
           />
-          <meshLambertMaterial color="red" />
+          <meshLambertMaterial color="red" opacity={.7} transparent/>
         </>
       ) : null}
 

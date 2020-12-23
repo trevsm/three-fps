@@ -28,45 +28,45 @@ export function Fence01(props) {
             attach="geometry"
             args={[12 / props.scale[0], 10 / props.scale[1], 1 / props.scale[2]]}
           />
-          <meshLambertMaterial color="red" />
+          <meshLambertMaterial color="red" opacity={.7} transparent/>
         </>
       ) : null}
       <Suspense fallback={null}>
         <group rotation={[-Math.PI / 2, 0, 0]}>
           <group rotation={[Math.PI / 2, 0, 0]}>
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder10_lambert1_0.geometry}
             />
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder11_lambert1_0.geometry}
             />
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder6_lambert1_0.geometry}
             />
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder15_lambert1_0.geometry}
             />
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder12_lambert1_0.geometry}
             />
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder13_lambert1_0.geometry}
             />
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder8_lambert1_0.geometry}
             />
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder9_lambert1_0.geometry}
             />
-            <mesh
+            <mesh receiveShadow castShadow
               material={materials.lambert1}
               geometry={nodes.pCylinder5_lambert1_0.geometry}
             />

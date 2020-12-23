@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { Sky, Stars } from '@react-three/drei'
 
 export const Lighting = (props) => {
-  const d = 200
+  const d = 20
   return (
     <>
       {props.day.current ? (
@@ -14,7 +14,7 @@ export const Lighting = (props) => {
             azimuth={0.25}
           />
           <directionalLight
-            position={[-8, 20, 8]}
+            position={[0, 10, 20]}
             intensity={1}
             shadow-camera-left={d * -1}
             shadow-camera-bottom={d * -1}
@@ -45,7 +45,7 @@ export const Lighting = (props) => {
           <hemisphereLight
             skyColor={'black'}
             groundColor={0xffffff}
-            intensity={0.03}
+            intensity={.09}
             position={[0, 50, 0]}
           />
         </>
