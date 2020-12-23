@@ -1,5 +1,6 @@
 import React from 'react'
 import Tree02 from './Tree02'
+import { Grass02 } from './Grass02'
 
 export function randomTreeGrid(
     clumpDiameter,
@@ -42,12 +43,14 @@ export function randomTreeGrid(
     for (let i = 1; i < clumpDiameter - 1; i++) {
       for (let j = 1; j < clumpDiameter - 1; j++) {
         if (map[i][j]['active']) {
-          treeList.push(
+          treeList.push(<>
+          <Grass02 position={map[i][j]['position']} scale={[.05,.05,.05]}/>
             <Tree02
               key={`${i}${j}`}
               position={map[i][j]['position']}
               scale={map[i][j]['scale']}
             />
+            </>
           )
         }
       }
@@ -56,5 +59,5 @@ export function randomTreeGrid(
   }
 
   export function Forest(){
-      return randomTreeGrid(20, 3, 5, 10, 0.01, 0.03)
+      return randomTreeGrid(20, 3, 7, 10, 0.01, 0.03)
   }

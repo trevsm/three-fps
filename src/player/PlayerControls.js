@@ -8,6 +8,8 @@ export const usePlayerControls = () => {
     right: false,
     jump: false,
     run: false,
+    crouch: false,
+    toggle_light: false,
   })
 
   const keys = {
@@ -17,6 +19,8 @@ export const usePlayerControls = () => {
     KeyD: 'right',
     Space: 'jump',
     ShiftLeft: 'run',
+    KeyC: 'crouch',
+    KeyF: 'toggle_light',
   }
 
   const moveFieldByKey = key => keys[key]

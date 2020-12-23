@@ -3,12 +3,12 @@ import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { useFrame } from 'react-three-fiber'
 
-import { usePlayerControls } from './PlayerControls'
 import { forwardRef } from 'react'
 
 export const PlayerMovement = forwardRef((props, ref) => {
   const STATS = props.STATS
   const api = props.api
+  const {forward, backward, left, right, jump, run, crouch} = props.C
 
   const velocity = useRef([0, 0, 0])
   const position = useRef([0, 0, 0])
@@ -21,8 +21,6 @@ export const PlayerMovement = forwardRef((props, ref) => {
   const sideVector = new THREE.Vector3()
 
   const camEuler = new THREE.Euler()
-
-  const { forward, backward, left, right, jump, run } = usePlayerControls()
 
   const playerOnGround = () => {
     return position.current[1] < 1

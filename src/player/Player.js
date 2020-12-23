@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { useThree } from 'react-three-fiber'
 
 import { useSphere } from 'use-cannon'
@@ -6,6 +6,7 @@ import { useSphere } from 'use-cannon'
 import { PlayerMovement } from './PlayerMovement'
 import { PlayerCamera } from './PlayerCamera'
 import { PlayerModel } from './PlayerModel'
+import { usePlayerControls } from './PlayerControls'
 
 import { FlashLight } from './tools/FlashLight'
 
@@ -29,12 +30,33 @@ export default function Player(props) {
   }))
 
   const { camera } = useThree()
+  const {
+    forward,
+    backward,
+    left,
+    right,
+    jump,
+    run,
+    crouch,
+    toggle_light,
+  } = usePlayerControls()
 
   return (
     <group>
-      <PlayerCamera ref={ref} STATS={STATS} camera={camera} />
-      <FlashLight ref={ref} STATS={STATS} camera={camera} />
-      <PlayerMovement ref={ref} api={api} STATS={STATS} camera={camera} />
+      <PlayerCamera ref={ref} STATS={STATS} camera={camera} c={{ crouch }} />
+      <FlashLight
+        ref={ref}
+        STATS={STATS}
+        camera={camera}
+        C={{ toggle_light }}
+      />
+      <PlayerMovement
+        ref={ref}
+        api={api}
+        STATS={STATS}
+        camera={camera}
+        C={{ forward, backward, left, right, jump, run, crouch }}
+      />
       {/* <PlayerModel ref={ref} /> */}
     </group>
   )
