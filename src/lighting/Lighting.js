@@ -22,12 +22,12 @@ export const Lighting = () => {
       <hemisphereLight
         skyColor={'black'}
         groundColor={0xffffff}
-        intensity={0.03}
+        intensity={0.02}
         position={[0, 50, 0]}
       />
       <directionalLight
         position={[-8, 20, 8]}
-        intensity={0.1}
+        intensity={0.05}
         shadow-camera-left={d * -1}
         shadow-camera-bottom={d * -1}
         shadow-camera-right={d}

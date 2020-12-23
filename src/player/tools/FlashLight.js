@@ -5,7 +5,8 @@ import * as THREE from 'three'
 
 export const FlashLight = forwardRef((props, ref) => {
   const light = useMemo(() => new THREE.SpotLight(0xffffff), [])
-  light.angle = .2
+  light.angle = 0.2
+  light.intensity = 2
 
   function moveLight() {
     const pos = ref.current.position
@@ -18,23 +19,24 @@ export const FlashLight = forwardRef((props, ref) => {
   }
 
   function moveTarget() {
-    const pos = ref.current.position
+    var dist = 10
+    var cwd = new THREE.Vector3()
 
-    light.target.position.y = pos.y + props.STATS.player_height - .1
+    props.camera.getWorldDirection(cwd)
 
-    light.target.position.x = pos.x + Math.cos(props.camera.rotation.x)
+    cwd.multiplyScalar(dist)
+    cwd.add(props.camera.position)
 
-    light.target.position.z = pos.z + Math.sin(props.camera.rotation.z)
+    light.target.position.set(cwd.x, cwd.y, cwd.z)
+    light.target.setRotationFromQuaternion(props.camera.quaternion)
   }
-
-
-  useFrame(()=>{
+  useFrame(() => {
     moveLight()
     moveTarget()
   })
   return (
     <>
-      <primitive object={light} penumbra/>
+      <primitive object={light} penumbra />
       <primitive object={light.target} position={[0, 2, 0]} />
     </>
   )
