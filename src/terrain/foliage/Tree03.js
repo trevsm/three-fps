@@ -19,7 +19,7 @@ export function Tree03(props) {
     ...props,
   }))
 
-  const { nodes, materials } = useGLTF('/models/trees/tree03/scene.gltf')
+  const { nodes, materials } = useGLTF('/three-fps/public/models/trees/tree03/scene.gltf')
   return (
     <mesh ref={ref} scale={props.scale} dispose={null}>
       {visibleHitBox.current ? (
@@ -62,4 +62,4 @@ export function Tree03(props) {
   )
 }
 
-useGLTF.preload('/models/trees/tree03/scene.gltf')
+useGLTF.preload('/three-fps/public/models/trees/tree03/scene.gltf')

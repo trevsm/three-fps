@@ -11,7 +11,7 @@ import { useGLTF } from '@react-three/drei/useGLTF'
 
 export function Grass02(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/models/grass/grass02/scene.gltf')
+  const { nodes, materials } = useGLTF('/three-fps/public/models/grass/grass02/scene.gltf')
   return (
     <Suspense fallback={null}>
       <group ref={group} {...props} dispose={null}>
@@ -37,4 +37,4 @@ export function Grass02(props) {
   )
 }
 
-useGLTF.preload('/models/grass/grass02/scene.gltf')
+useGLTF.preload('/three-fps/public/models/grass/grass02/scene.gltf')
