@@ -19,7 +19,7 @@ export function Fence01(props) {
     ...props,
   }))
 
-  const { nodes, materials } = useGLTF('/three-fps/public/models/objects/fence01/scene.gltf')
+  const { nodes, materials } = useGLTF('/three-fps/models/objects/fence01/scene.gltf')
   return (
     <mesh ref={ref} scale={props.scale} dispose={null}>
       {visibleHitBox.current ? (
@@ -81,4 +81,4 @@ export function Fence01(props) {
   )
 }
 
-useGLTF.preload('/three-fps/public/models/objects/fence01/scene.gltf')
+useGLTF.preload('/three-fps/models/objects/fence01/scene.gltf')
