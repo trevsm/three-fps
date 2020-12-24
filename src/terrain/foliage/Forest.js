@@ -26,11 +26,14 @@ export function randomTreeGrid(
       ) {
         const dX = Math.random() * maxDist + minDist
         const sX = Math.random() * maxScale + minScale
+        const dead = Math.round(Math.random() * 15 + 1) < 3
+
 
         map[i][j] = {
           active: 1,
           scale: [sX, sX, sX],
           position: [x * dX, 0, y * dX],
+          dead: dead,
         }
       } else {
         map[i][j] = {}
@@ -53,6 +56,7 @@ export function randomTreeGrid(
               key={`${i}${j}`}
               position={map[i][j]['position']}
               scale={map[i][j]['scale']}
+              dead={map[i][j]['dead']}
             />
           </>
         )
@@ -63,5 +67,5 @@ export function randomTreeGrid(
 }
 
 export function Forest() {
-  return randomTreeGrid(20, 1, 10, 20, 0.01, 0.05)
+  return randomTreeGrid(15, 1, 10, 15, 0.01, 0.05)
 }

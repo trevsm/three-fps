@@ -10,7 +10,6 @@ import React, { useRef, Suspense } from 'react'
 import { useGLTF } from '@react-three/drei/useGLTF'
 import { useBox } from 'use-cannon'
 
-
 export function Tree03(props) {
   const visibleHitBox = useRef(false)
 
@@ -41,16 +40,20 @@ export function Tree03(props) {
         <group dispose={null}>
           <group rotation={[-Math.PI / 2, 0, 0]}>
             <group rotation={[Math.PI / 2, 0, 0]}>
-              <mesh castShadow receiveShadow
+              <mesh
+                castShadow
+                receiveShadow
                 material={materials.Mat_pine_tree_bark_lambert3}
                 geometry={nodes.tree_Mat_pine_tree_bark_lambert3_0.geometry}
               />
-              <mesh castShadow receiveShadow
-                material={materials.Mat_pine_tree_branch_lambert2}
-                geometry={
-                  nodes.group47_Mat_pine_tree_branch_lambert2_0.geometry
-                }
-              />
+              {props.dead ? null : (
+                <mesh
+                  material={materials.Mat_pine_tree_branch_lambert2}
+                  geometry={
+                    nodes.group47_Mat_pine_tree_branch_lambert2_0.geometry
+                  }
+                />
+              )}
             </group>
           </group>
         </group>

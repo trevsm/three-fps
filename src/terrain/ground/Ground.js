@@ -3,7 +3,7 @@ import React from 'react'
 
 import { useLoader } from 'react-three-fiber'
 import { usePlane } from 'use-cannon'
-import Grass from './textures/grass.jpg'
+import Dirt from './textures/dirt.png'
 
 export default props => {
   const mapWidth = 10000,
@@ -16,9 +16,9 @@ export default props => {
     args: [mapWidth, mapLength, vX, vX],
   }))
 
-  const texture = useLoader(THREE.TextureLoader, Grass)
+  const texture = useLoader(THREE.TextureLoader, Dirt)
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping
-  texture.repeat.set(mapWidth/2, mapLength/2)
+  texture.repeat.set(mapWidth/4, mapLength/4)
 
   return (
     <mesh ref={ref} receiveShadow>

@@ -45,7 +45,7 @@ export const Lighting = (props) => {
           <hemisphereLight
             skyColor={'black'}
             groundColor={0xffffff}
-            intensity={.09}
+            intensity={.03}
             position={[0, 50, 0]}
           />
         </>
