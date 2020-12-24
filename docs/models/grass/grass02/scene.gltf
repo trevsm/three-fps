@@ -1,0 +1,416 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 300,
+      "max": [
+        2.0984101295471191,
+        2.639707088470459,
+        2.2603344917297363
+      ],
+      "min": [
+        -1.7908204793930054,
+        -0.0048691038973629475,
+        -2.1370460987091064
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 3600,
+      "componentType": 5126,
+      "count": 300,
+      "max": [
+        0.97232770919799805,
+        0.29112395644187927,
+        0.99981987476348877
+      ],
+      "min": [
+        -0.97214949131011963,
+        -0.6728966236114502,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 300,
+      "max": [
+        0.99999922513961792,
+        0.0031884456984698772,
+        0.9724993109703064,
+        1
+      ],
+      "min": [
+        -0.99999880790710449,
+        0.00070019683334976435,
+        -0.9724993109703064,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 300,
+      "max": [
+        0.85313618183135986,
+        0.88301080465316772
+      ],
+      "min": [
+        0.16415369510650635,
+        0.034679710865020752
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 720,
+      "max": [
+        299
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 7200,
+      "componentType": 5126,
+      "count": 400,
+      "max": [
+        1.8799039125442505,
+        2.9588413238525391,
+        1.8558028936386108
+      ],
+      "min": [
+        -1.8496013879776001,
+        -0.037011496722698212,
+        -2.1682295799255371
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 12000,
+      "componentType": 5126,
+      "count": 400,
+      "max": [
+        1,
+        0.45848912000656128,
+        0.97232770919799805
+      ],
+      "min": [
+        -1,
+        -0.0097051402553915977,
+        -0.97232770919799805
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 4800,
+      "componentType": 5126,
+      "count": 400,
+      "max": [
+        0.97218722105026245,
+        0.027312356978654861,
+        0.99985200166702271,
+        1
+      ],
+      "min": [
+        -0.97220468521118164,
+        0.0097199194133281708,
+        -0.99983417987823486,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2400,
+      "componentType": 5126,
+      "count": 400,
+      "max": [
+        0.86256694793701172,
+        0.93952840566635132
+      ],
+      "min": [
+        0.16493327915668488,
+        0.0212705098092556
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 2880,
+      "componentType": 5125,
+      "count": 960,
+      "max": [
+        399
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "leMstrx (https://sketchfab.com/leMstrx)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/detailed-grass-by-lemstrx-b55c82301f5b4b2099e3fee553ba3ec2",
+      "title": "Detailed Grass - by leMstrx"
+    },
+    "generator": "Sketchfab-4.97.2",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 6720,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 5600,
+      "byteOffset": 6720,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 16800,
+      "byteOffset": 12320,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 11200,
+      "byteOffset": 29120,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 40320,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Grass_1_baseColor.png"
+    },
+    {
+      "uri": "textures/Grass_2_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaCutoff": 0.69999999999999996,
+      "alphaMode": "MASK",
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Grass_1",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      }
+    },
+    {
+      "alphaCutoff": 0.69999999999999996,
+      "alphaMode": "MASK",
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Grass_2",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.78091097700000001
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Grass_1.012_Grass_1_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Grass_1.012_Grass_2_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "Grassfbx.fbx"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6
+      ],
+      "matrix": [
+        -4.9444686437089072,
+        -3.3542300470823633e-14,
+        -24.84192075275336,
+        0,
+        7.1549647348622559e-07,
+        16.689739227294904,
+        -1.4241050331251401e-07,
+        0,
+        22.146271736863653,
+        -9.8703252330091498e-07,
+        -4.4079339624268972,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "Grass_1.012"
+    },
+    {
+      "mesh": 0,
+      "name": "Grass_1.012_Grass_1_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Grass_1.012_Grass_2_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}
+
