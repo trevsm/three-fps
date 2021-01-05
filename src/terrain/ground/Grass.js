@@ -10,7 +10,7 @@ export function Grass(props) {
 
   const count = Math.pow(300, 2)
   const cX = Math.pow(count, 1 / 2) / 2
-  const sX = 0.5 // spacing
+  const sX = 1 // spacing
 
   const { positions, transform } = useMemo(() => {
     const positions = [...Array(count)].map(() => new THREE.Vector3())

@@ -5,7 +5,7 @@ export const Lighting = (props) => {
   const d = 20
   return (
     <>
-      {props.day.current ? (
+      {props.day? (
         <>
           <Sky
             distance={450000}

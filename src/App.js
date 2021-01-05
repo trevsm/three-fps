@@ -10,12 +10,12 @@ import Terrain from './terrain/Terrain'
 
 export default function App() {
   console.warn = () => {} //remove warnings
-  const day = useRef(true)
+  const day = true
 
   return (
     <Canvas shadowMap gl={{ alpha: false }} camera={{ fov: 60 }}>
       <Lighting day={day} />
-      {day.current ? null : <fog attach="fog" args={['black', 10, 100]} />}
+      {day? null : <fog attach="fog" args={['black', 10, 100]} />}
       <Stats />
       <Physics gravity={[0, -10, 0]}>
         <Player />

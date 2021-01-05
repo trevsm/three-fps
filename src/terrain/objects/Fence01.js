@@ -8,7 +8,7 @@ title: Country Side Fence
 
 import React, { Suspense, useRef } from 'react'
 import { useGLTF } from '@react-three/drei/useGLTF'
-import {useBox} from 'use-cannon'
+import { useBox } from 'use-cannon'
 
 export function Fence01(props) {
   const visibleHitBox = useRef(false)
@@ -19,54 +19,60 @@ export function Fence01(props) {
     ...props,
   }))
 
-  const { nodes, materials } = useGLTF('/three-fps/models/objects/fence01/scene.gltf')
+  const { nodes, materials } = useGLTF(
+    '/three-fps/models/objects/fence01/scene.gltf'
+  )
   return (
     <mesh ref={ref} scale={props.scale} dispose={null}>
       {visibleHitBox.current ? (
         <>
           <boxBufferGeometry
             attach="geometry"
-            args={[12 / props.scale[0], 10 / props.scale[1], 1 / props.scale[2]]}
+            args={[
+              12 / props.scale[0],
+              10 / props.scale[1],
+              1 / props.scale[2],
+            ]}
           />
-          <meshLambertMaterial color="red" opacity={.7} transparent/>
+          <meshLambertMaterial color="red" opacity={0.7} transparent />
         </>
       ) : null}
       <Suspense fallback={null}>
         <group rotation={[-Math.PI / 2, 0, 0]}>
           <group rotation={[Math.PI / 2, 0, 0]}>
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder10_lambert1_0.geometry}
             />
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder11_lambert1_0.geometry}
             />
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder6_lambert1_0.geometry}
             />
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder15_lambert1_0.geometry}
             />
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder12_lambert1_0.geometry}
             />
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder13_lambert1_0.geometry}
             />
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder8_lambert1_0.geometry}
             />
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder9_lambert1_0.geometry}
             />
-            <mesh receiveShadow castShadow
+            <mesh
               material={materials.lambert1}
               geometry={nodes.pCylinder5_lambert1_0.geometry}
             />
