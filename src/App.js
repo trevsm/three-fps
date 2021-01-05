@@ -10,7 +10,7 @@ import Terrain from './terrain/Terrain'
 
 export default function App() {
   console.warn = () => {} //remove warnings
-  const day = useRef(false)
+  const day = useRef(true)
 
   return (
     <Canvas shadowMap gl={{ alpha: false }} camera={{ fov: 60 }}>

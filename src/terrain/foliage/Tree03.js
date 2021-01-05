@@ -19,7 +19,9 @@ export function Tree03(props) {
     ...props,
   }))
 
-  const { nodes, materials } = useGLTF('/three-fps/models/trees/tree03/scene.gltf')
+  const { nodes, materials } = useGLTF(
+    '/three-fps/models/trees/tree03/scene.gltf'
+  )
   return (
     <mesh ref={ref} scale={props.scale} dispose={null}>
       {visibleHitBox.current ? (
@@ -41,10 +43,9 @@ export function Tree03(props) {
           <group rotation={[-Math.PI / 2, 0, 0]}>
             <group rotation={[Math.PI / 2, 0, 0]}>
               <mesh
-                castShadow
-                receiveShadow
                 material={materials.Mat_pine_tree_bark_lambert3}
                 geometry={nodes.tree_Mat_pine_tree_bark_lambert3_0.geometry}
+                alphaTest={0.5}
               />
               {props.dead ? null : (
                 <mesh
@@ -52,6 +53,7 @@ export function Tree03(props) {
                   geometry={
                     nodes.group47_Mat_pine_tree_branch_lambert2_0.geometry
                   }
+                  alphaTest={0.5}
                 />
               )}
             </group>

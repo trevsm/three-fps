@@ -1,6 +1,5 @@
 import React from 'react'
 import { Tree03 } from './Tree03'
-import { Grass02 } from './Grass02'
 
 export function randomTreeGrid(
   clumpDiameter,
